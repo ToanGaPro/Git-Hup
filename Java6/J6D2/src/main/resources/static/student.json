@@ -1,0 +1,10 @@
+{
+	"name" :"Nguyễn Văn Tèo",
+	"gender": true,
+	"marks":7.5,
+	"contact" :{
+		"email" : "teonv@gmail.com",
+		"phone" : "083174589"
+	},
+	"subject" :["web2921","com1017"]
+}

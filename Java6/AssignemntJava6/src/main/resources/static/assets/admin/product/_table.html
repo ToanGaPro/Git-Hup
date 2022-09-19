@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Product List</div>
+    <div class="panel-body">
+        <table class="table">
+            <thead class="table-primary">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Available <span class="text-info">?</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in pager.items">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price | number : 2}}</td>
+                <td>{{item.createDate | date : 'dd/MM/yyyy'}}</td>
+                <td>{{item.image}}</td>
+                <td>{{item.category.name}}</td>
+                <td>{{item.available?'Yes':"No"}}</td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <button ng-click="edit(item)" class="btn btn-warning glyphicon glyphicon-edit"></button>
+                        <button ng-click="delete(item)" class="btn btn-warning glyphicon glyphicon-trash"></button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer text-center">
+        <button class="btn btn-danger" ng-click="pager.first()">
+            <b class="glyphicon glyphicon-hand-up"></b>
+        </button>
+        <button class="btn btn-primary" ng-click="pager.previous()">
+            <b class="glyphicon glyphicon-hand-left"></b>
+        </button>
+        <button class="btn btn-success" disabled>{{pager.page + 1}} of {{pager.count}}</button>
+        <button class="btn btn-danger" ng-click="pager.next()">
+            <b class="glyphicon glyphicon-hand-right"></b>
+        </button>
+        <button class="btn btn-danger" ng-click="pager.last()">
+            <b class="glyphicon glyphicon-hand-down"></b>
+        </button>
+    </div>
+</div>

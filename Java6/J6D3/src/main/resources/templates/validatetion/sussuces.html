@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Result</h3>
+	<ul th:object="${sv}">
+		<li>Email address: <i th:text="*{email}"></i></li>
+		<li>Full name: <i th:text="*{fullname}"></i></li>
+		<li>Average marks: <i th:text="*{marks}"></i></li>
+		<li>Gender: <i th:text="*{gender} ? 'Male' :'Frmale'"></i></li>
+		<li>Country : <i th:text="*{country}"></i></li>
+		
+	</ul>
+</body>
+</html>
